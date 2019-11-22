@@ -17,7 +17,9 @@ function promptUser() {
             {
                 type: "list",
                 name: "employee",
-                message: "What is type of employee are you?"
+                message: "What type of employee are you?",
+                choices: ['manager', 'engineer', 'intern'],
+                
             },
             {
                 type: "input",
