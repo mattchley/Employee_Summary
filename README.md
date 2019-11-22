@@ -19,7 +19,7 @@ Create classes()
         engineer class: git hub page
         intern class: school name
 
-Axios js page()
+Axios js page(X)
     questions to ask
         Name
         employee type [will need a choicee]
@@ -30,4 +30,6 @@ Axios js page()
         github link
     if intern 
         school name
+Add conditionals for axios questions
+    maybe break them up so they only run on certain objects?
     

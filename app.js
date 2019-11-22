@@ -20,16 +20,19 @@ function promptUser() {
                 name: "email",
                 message: "What is your email"
             },
+            // If manager
             {
                 type: "input",
                 name: "phone",
                 message: "What is your phone number?"
             },
+            // If engineer
             {
                 type: "input",
                 name: "URL",
                 message: "What is github URL?"
             },
+            // If intern
             {
                 type: "input",
                 name: "school",
