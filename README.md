@@ -12,12 +12,13 @@ import directory structure (X)
 create test.js for every class in file(x)
     populate tests()
 FormatHTML [it will be provided] ()
-Create classes()
+Create classes(X)
     give this.objects to all classes
         employee class: name, employee type, ID, email
         manager class: office number
         engineer class: git hub page
         intern class: school name
+    linked them all back to employee.js
 
 Axios js page(X)
     questions to ask
