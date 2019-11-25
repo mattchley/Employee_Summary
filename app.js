@@ -5,7 +5,7 @@ const manager = require('./lib/manager')
 const engineer = require('./lib/engineer')
 const intern = require('./lib/intern')
 
-// 1.inquirer(documentation has examples)is asyncø
+// 1.inquirer(documentation has examples)is async
 // be sure to then to use the data or potentially if for employee type
 function promptUser() {
     return inquirer

@@ -20,7 +20,7 @@ Create classes(X)
         intern class: school name
     linked them all back to employee.js
 
-Axios js page(X)
+Inquirer js page(X)
     questions to ask
         Name
         employee type [will need a choice]
@@ -33,6 +33,9 @@ Axios js page(X)
         school name
     loop through until user is done()
     can have functions in the choices to allow for if statements and run auto
+Maybe restructure the question flow?
+    employee type first?
+        then name, email, and type specfic question
 
 Add conditionals by method for axios questions
     maybe break them up so they only run on employee obj?
