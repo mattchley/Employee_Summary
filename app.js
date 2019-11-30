@@ -1,8 +1,10 @@
+const fs = require("fs")
 const inquirer = require("inquirer");
 const Employee = require('./lib/employee')
 const Manager = require('./lib/manager')
 const Engineer = require('./lib/engineer')
 const Intern = require('./lib/intern');
+
 
 function getName() {
 
@@ -101,13 +103,33 @@ async function init() {
         let intern = await new Intern(name, role, email, id, school);
         // now that the info is pushes to the objs the info needs to put on the snippets in Lib
 
+
+        // employee team
+        // var newWorker = fs.readFileSync('./template/main.html', { encoding: 'utf8' });
+        // let replaceWorker = templateFile.replace('{{name}}', 'obj info');
+        // // then write onto the main.html with replace.({{ team }}, );
+
+        // Manager
+        var newManager = fs.readFileSync('./template/manager.html', { encoding: 'utf8' });
+        let replaceMangerName =  newManager.replace(`{{name}}` , manager.name);
+        let replaceManagerEmail = newManager.replace(`{{email}}`, manager.email);
+        let replaceManagerId = newManager.replace(`{{id}}`, manager.id);
+        let replaceManagerRole = newManager.replace(`{{role}}`, manager.role);
+        let replaceManagerPhone = newManager.replace(`{{officeNumber}}`, manager.phone);
+        console.log(`${newManager} has been written`)
         
-        console.log(worker)
-        console.log(manager)
-        console.log(engineer)
-        console.log(intern)
+    
+        // then write onto the main.html with replace.({{ team }}, );
 
+        // // Engineer
+        // var newEngineer = fs.readFileSync('./template/engineer.html', { encoding: 'utf8' });
+        // let replaceEngineer = templateFile.replace('{{github}}', engineer.URL);
+        // // then write onto the main.html with replace.({{ team }}, );
 
+        // // employee
+        // var newINtern = fs.readFileSync('./template/intern.html', { encoding: 'utf8' });
+        // let replaceIntern = templateFile.replace('{{school}}', intern.school);
+        // // then write onto the main.html with replace.({{ team }}, );
 
     } catch (err) {
         console.log(err);
