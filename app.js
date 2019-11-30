@@ -6,7 +6,7 @@ const Engineer = require('./lib/engineer')
 const Intern = require('./lib/intern');
 
 
-function getName() {
+function inqName() {
 
     return inquirer
         .prompt(
@@ -18,7 +18,7 @@ function getName() {
 
 };
 
-function getId() {
+function inqId() {
 
     return inquirer
         .prompt(
@@ -29,7 +29,7 @@ function getId() {
             })
 };
 
-function getEmail() {
+function inqEmail() {
 
     return inquirer
         .prompt(
@@ -41,7 +41,7 @@ function getEmail() {
 
 };
 
-function getRole() {
+function inqRole() {
     return inquirer
         .prompt(
             {
@@ -54,7 +54,7 @@ function getRole() {
 
 };
 
-function getPhone() {
+function inqPhone() {
     return inquirer
         .prompt(
             {
@@ -64,7 +64,7 @@ function getPhone() {
             })
 };
 
-function getGithub() {
+function inqGithub() {
     return inquirer
         .prompt(
             // If engineer
@@ -75,7 +75,7 @@ function getGithub() {
             })
 };
 
-function getSchool() {
+function inqSchool() {
     return inquirer
         .prompt(
             // If intern
@@ -89,13 +89,13 @@ function getSchool() {
 // tree
 async function init() {
     try {
-        const name = await getName();
-        const id = await getId();
-        const email = await getEmail();
-        const role = await getRole();
-        const phone = await getPhone();
-        const URL = await getGithub()
-        const school = await getSchool();
+        const name = await inqName();
+        const id = await inqId();
+        const email = await inqEmail();
+        const role = await inqRole();
+        const phone = await inqPhone();
+        const URL = await inqGithub()
+        const school = await inqSchool();
 
         let worker = await new Employee(name, role, email, id);
         let manager = await new Manager(name, role, email, id, phone);
@@ -105,31 +105,33 @@ async function init() {
 
 
         // employee team
-        // var newWorker = fs.readFileSync('./template/main.html', { encoding: 'utf8' });
-        // let replaceWorker = templateFile.replace('{{name}}', 'obj info');
-        // // then write onto the main.html with replace.({{ team }}, );
-
-        // Manager
-        var newManager = fs.readFileSync('./template/manager.html', { encoding: 'utf8' });
-        let replaceMangerName =  newManager.replace(`{{name}}` , manager.name);
-        let replaceManagerEmail = newManager.replace(`{{email}}`, manager.email);
-        let replaceManagerId = newManager.replace(`{{id}}`, manager.id);
-        let replaceManagerRole = newManager.replace(`{{role}}`, manager.role);
-        let replaceManagerPhone = newManager.replace(`{{officeNumber}}`, manager.phone);
-        console.log(`${newManager} has been written`)
+        var newWorker = fs.readFileSync('./template/main.html', { encoding: 'utf8' });
+        let replaceWorker = templateFile.replace('{{ team }}', 'obj info');
         
-    
-        // then write onto the main.html with replace.({{ team }}, );
+        // Manager
 
-        // // Engineer
-        // var newEngineer = fs.readFileSync('./template/engineer.html', { encoding: 'utf8' });
-        // let replaceEngineer = templateFile.replace('{{github}}', engineer.URL);
-        // // then write onto the main.html with replace.({{ team }}, );
+        var newManager = fs.readFileSync('./template/manager.html', { encoding: 'utf8' });
+        let replaceManagerName = newManager.replace('{{ name }}' , JSON.stringify(worker.name.name));
+        let replaceManagerRole = newManager.replace('{{ role }}' , JSON.stringify(worker.role.role));
+        let replaceManagerEmail = newManager.replace('{{ email }}' , JSON.stringify(worker.email.email));
+        let replaceManagerId = newManager.replace('{{ id }}' , JSON.stringify(worker.id.id));
+        let replaceManagerPhone = newManager.replace('{{ officeNumber }}' , JSON.stringify(manager.phone.phone));
+      
+        // Engineer
+        var newEngineer = fs.readFileSync('./template/engineer.html', { encoding: 'utf8' });
+        let replaceEngineerName = newManager.replace('{{ name }}' , JSON.stringify(worker.name.name));
+        let replaceEngineerRole = newManager.replace('{{ role }}' , JSON.stringify(worker.role.role));
+        let replaceEngineerEmail = newManager.replace('{{ email }}' , JSON.stringify(worker.email.email));
+        let replaceEngineerId = newManager.replace('{{ id }}' , JSON.stringify(worker.id.id));
+        let replaceEngineerPhone = newManager.replace('{{ officeNumber }}' , JSON.stringify(engineer.URL.URL));
 
-        // // employee
-        // var newINtern = fs.readFileSync('./template/intern.html', { encoding: 'utf8' });
-        // let replaceIntern = templateFile.replace('{{school}}', intern.school);
-        // // then write onto the main.html with replace.({{ team }}, );
+        // Intern
+        var newIntern = fs.readFileSync('./template/intern.html', { encoding: 'utf8' });
+        let replaceInternName = newManager.replace('{{ name }}' , JSON.stringify(worker.name.name));
+        let replaceInternRole = newManager.replace('{{ role }}' , JSON.stringify(worker.role.role));
+        let replaceInternEmail = newManager.replace('{{ email }}' , JSON.stringify(worker.email.email));
+        let replaceInternId = newManager.replace('{{ id }}' , JSON.stringify(worker.id.id));
+        let replaceInternPhone = newManager.replace('{{ officeNumber }}' , JSON.stringify(intern.school.school));
 
     } catch (err) {
         console.log(err);
