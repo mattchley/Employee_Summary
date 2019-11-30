@@ -99,6 +99,9 @@ async function init() {
         let manager = await new Manager(name, role, email, id, phone);
         let engineer = await new Engineer(name, role, email, id, URL);
         let intern = await new Intern(name, role, email, id, school);
+        // now that the info is pushes to the objs the info needs to put on the snippets in Lib
+
+        
         console.log(worker)
         console.log(manager)
         console.log(engineer)
